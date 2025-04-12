@@ -1,0 +1,50 @@
+
+
+.pagelogin-container {
+  display: flex;
+}
+.pagelogin-container .register-container  { 
+  width: 50%;
+  height: 600px;
+}
+.logimg{
+  width: 50%;
+  height: 500px;
+  
+  display: block;
+}
+.logo-login{
+
+  height: 150px;
+}
+.title-login{
+  color: var(--primary-color);
+  margin: 20px 0;
+}
+.salayty{
+  color: var(--on-primary);
+  font-size: 15px;
+  margin: auto;
+}
+.flexitemh3{
+  flex: 15;
+  z-index: 200;
+
+}
+@media (max-width: 768px) {
+
+  
+}
+@media (max-width: 500px) {
+  .logimg{
+    display: none;
+  }
+  .pagelogin-container .register-container {
+    width: 100%;
+    height: 600px;
+   
+  }
+  .salayty{
+    font-size: 10px;
+  }
+}

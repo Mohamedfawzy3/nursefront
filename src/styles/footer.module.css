@@ -1,0 +1,36 @@
+footer{
+    background-color: #333;
+    
+  
+    aspect-ratio: 9/1;
+    color: white;
+  
+    padding: 1rem 1rem;
+    opacity: 0.99;
+    position: relative;
+    font-weight: bold;
+}
+.layout{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-image: url(../assets/footer1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: .05;
+    z-index: -2;
+}
+.socialIcon{
+    border: 1px solid white;
+
+    display: block;
+    padding: 7px;
+    border-radius: 50%;
+    display: flex
+;
+    align-items: center;
+    justify-content: center;
+}
