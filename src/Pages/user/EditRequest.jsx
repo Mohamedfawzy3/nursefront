@@ -148,7 +148,7 @@ const EditRequest = () => {
           <Label>الوصف:</Label>
           <Textarea name="description" value={formData.description} onChange={handleChange} required />
 
-          <Label>السعر:</Label>
+          <Label>رقم الهاتف:</Label>
           <Input type="number" name="price" value={formData.price} onChange={handleChange} required />
 
           <Label>الحالة:</Label>
@@ -159,7 +159,7 @@ const EditRequest = () => {
           </Select>
           <div style={{ display: "flex", justifyContent: "center" }}>
           <Button type="submit"> حفظ التعديلات</Button>
-          <BackButton onClick={() => navigate("/SharedLayout/my-requests")}>الرجوع إلى الطلبات</BackButton>
+          <BackButton onClick={() => navigate("/account/my-requests")}>الرجوع إلى الطلبات</BackButton>
           </div>
         </Form>
       )}

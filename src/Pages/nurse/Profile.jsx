@@ -168,7 +168,7 @@ setUser((prev) => ({
               />
             </div>
             <div className=" col-12 col-sm-6">
-              <label htmlFor="country">الدولة</label>
+              <label htmlFor="country">المحافظه</label>
               <Input
                 type="text"
                 name="country"

@@ -156,27 +156,31 @@ return (
   
     {selectedRequest && (
                   <ModalOverlay>
-                      <ModalContent>
-                          <h2>أدخل التفاصيل</h2>
-                          <Input
-                              type="number"
-                              placeholder="السعر"
-                              value={price}
-                              onChange={(e) => setPrice(e.target.value)}
-                          />
-                          <Input
-                              type="text"
-                              placeholder="الرسالة"
-                              value={message}
-                              onChange={(e) => setMessage(e.target.value)}
-                          />
-                          <div style={{ marginTop: "10px" }}>
-                              <Button onClick={() => setSelectedRequest(null)}>إلغاء</Button>
-                              <Button onClick={submitAcceptRequest} style={{ marginRight: "10px" }}>
-                                  إرسال
-                              </Button>
-                          </div>
-                      </ModalContent>
+                    <ModalContent>
+  <h2>أدخل التفاصيل</h2>
+  <form onSubmit={submitAcceptRequest}>
+    <Input
+      type="number"
+      placeholder="السعر"
+      value={price}
+      onChange={(e) => setPrice(e.target.value)}
+      required
+    />
+    <Input
+      type="text"
+      placeholder="الرسالة"
+      value={message}
+      onChange={(e) => setMessage(e.target.value)}
+      required
+    />
+    <div style={{ marginTop: "10px" }}>
+      <Button type="button" onClick={() => setSelectedRequest(null)}>إلغاء</Button>
+      <Button type="submit" style={{ marginRight: "10px" }}>
+        إرسال
+      </Button>
+    </div>
+  </form>
+</ModalContent>
                   </ModalOverlay>
               )}
   </>
