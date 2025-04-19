@@ -26,6 +26,7 @@ import ErrorBoundary from "./Componants/ErrorBoundary"; // Import ErrorBoundary
 import NotFound from "./Pages/NotFound"; // Import a NotFound component
 import Unauthorized from "./Pages/Unauthorized"; // Import Unauthorized component
 import { UserProvider, UserContext } from "./context/UserContext"; // Import UserContext
+import Chatbot from "./Componants/Chatbot";
 
 // ProtectedRoute Component
 const ProtectedRoute = ({ children, allowedRoles }) => {
@@ -139,6 +140,7 @@ const App = () => {
   return (
     <ErrorBoundary>
       <RouterProvider router={router} />
+      <Chatbot /> 
     </ErrorBoundary>
   );
 };

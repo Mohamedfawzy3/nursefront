@@ -62,7 +62,7 @@ const Message = styled.div`
 `;
 
 const Profile = () => {
-  const{user}=useContext(UserContext)
+  const{user,setUser}=useContext(UserContext)
   const [formData, setFormData] = useState({
     first_name: "",
     last_name: "",
@@ -75,6 +75,7 @@ const Profile = () => {
   const [message, setMessage] = useState("");
   const userId = user?.id 
   useEffect(() => {
+    console.log("user",user);
     setFormData(user)
     // if (!userId) {
     //   // console.error("User ID غير موجود في localStorage");
@@ -101,12 +102,16 @@ const Profile = () => {
     e.preventDefault();
     try {
       const token = localStorage.getItem("token");
-      await axios.put("http://localhost:5000/api/users/", formData, {
+     const response= await axios.put("http://localhost:5000/api/users/", formData, {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
         },
       });
+setUser((prev) => ({
+        ...prev,
+        ...response.data,
+      }));
       setMessage("تم تحديث البيانات بنجاح!");
       setTimeout(() => {
         setMessage("");

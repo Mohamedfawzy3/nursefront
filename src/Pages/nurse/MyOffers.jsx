@@ -5,6 +5,8 @@ import styled from "styled-components";
 import { Edit2, Trash2 } from "lucide-react"
 import { useContext } from "react";
 import { UserContext } from "../../context/UserContext"; // Adjust the import path as necessary
+import { MdDeleteForever } from "react-icons/md";
+import { FaRegEdit } from "react-icons/fa";
 const ModalOverlay = styled.div`
     position: fixed;
     top: 0;
@@ -139,12 +141,12 @@ return (
                   <OfferDescription>العرض المقدم :<div>{offer?.message || "لا يوجد رسالة"}</div></OfferDescription>
                 </OfferInfo>
                 <ButtonGroup>
-                  <EditButton onClick={() => handleEdit(offer)} aria-label="Edit offer">
-                    <Edit2 size={20} />
-                  </EditButton>
-                  <DeleteButton onClick={() => handleDelete(offer._id)} aria-label="Delete offer">
-                    <Trash2 size={20} />
-                  </DeleteButton>
+                
+                  <button className="btn btn-outline-primary btn-sm me-1" onClick={() => handleEdit(offer)}><  FaRegEdit className="fs-4"/>
+                  </button>
+              
+                  <button className="btn btn-outline-danger btn-sm me-1" onClick={() => handleDelete(offer._id)}><  MdDeleteForever className="fs-4"/>
+                  </button>
                 </ButtonGroup>
               </OfferCard>
             ))
@@ -260,7 +262,7 @@ const OfferDescription = styled.p`
 
 const ButtonGroup = styled.div`
   display: flex;
-  gap: 1rem;
+  gap: 3px;
   margin-top:20px;
 `
 
